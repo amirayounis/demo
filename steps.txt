@@ -1,0 +1,5 @@
+
+
+1_views ----> form
+2-controller--->  get form //store data
+/////route -----> create routs
