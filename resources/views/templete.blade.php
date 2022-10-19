@@ -60,9 +60,22 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact">Contact us</a>
                 </li>
+                @auth
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Login</a>
-                </li>
+                    {{Auth ::user()->name}}
+                    <form action="{{route("logout")}}" method="POST">
+                        @csrf
+                        <input class="nav-link" type="submit" value="Logout">
+                    </form>
+
+                  </li>
+                    @else
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route("login")}}">Login</a>
+                      </li>
+                @endauth
+
               </ul>
 
             </div>

@@ -7,9 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
    <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
    @csrf
     Name : <input name="name" type="text" >
+    @if (count($errors->get("name"))>0)
+    @foreach ($errors->get("name") as $error)
+    {{$error}}
+    @endforeach
+    @endif
   <br>
   Price : <input name="price" type="text" >
   <br>
